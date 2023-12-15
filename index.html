@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/style.css" rel="stylesheet">
+  <title>firewatch</title>
+  <style>
+
+    .parallax {
+      height: 100vh;
+      perspective: 1px;
+      overflow: hidden;
+    }
+    .parallax-layer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      will-change: transform
+    }
+  </style>
+</head>
+<body class="bg-firewatch">
+  <section>
+    <div class="flex justify-between">
+      <ul class="top-0 bg-firewatch">
+        <li><a class="bg-transparent text-yellow-500 font-bold p-5 py-6">CAMPO SANTO</a></li>
+      </ul>
+      <div>
+        <button class="px-5 bg-orange-800 hover:bg-yellow-600 text-yellow-500 font-bold rounded-none">
+          FIREWATCH
+        </button>
+        <button class="px-5 bg-transparent hover:bg-yellow-950 text-yellow-500 font-bold rounded-none">
+          Development Blog
+        </button>
+        <button class="px-5 bg-transparent hover:bg-yellow-950 text-yellow-500 font-bold rounded-none">
+          Quarterly Review
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="overflow-hidden">
+      <section class="parallax-container block relative parallax justify-center transform-gpu bg-fixed overflow-hidden">
+        <div class="parallax-layer "><img class="object-cover h-full" src="images/background.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer1.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer2.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer3.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer4.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer5.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer6.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/layer7.png" alt=""></div>
+        <div class="parallax-layer"><img class="object-cover h-full" src="images/jungle5.png" alt=""></div>
+    </section>
+    </div>
+  </section>
+  <section>
+    <div class="bg-local bg-firewatch">   
+      <div class="grid grid-rows-4 grid-flow-col gap-4">
+        <div>01</div>
+        <div>02</div>
+      </div>
+    </div>
+  </section>
+  <script>
+
+    window.addEventListener('scroll', function() {
+      let scrollY = window.scrollY;
+      let layers = document.querySelectorAll('.parallax-layer');
+
+      layers.forEach(function(layer, index) {
+        let speed = (index + 1) * 0.2;
+        layer.style.transform = `translateY(${scrollY * speed * -1}px)`;
+      });
+    });
+  </script>
+</body>
+</html>
